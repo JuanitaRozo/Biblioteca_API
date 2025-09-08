@@ -1,0 +1,39 @@
+<!-- templates/rest_framework/base.html -->
+{% extends "rest_framework/base.html" %}
+
+{% block style %}
+    {{ block.super }}
+    <!-- Tu CSS personalizado -->
+    <link rel="stylesheet" href="/static/css/custom-drf.css">
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Overrides adicionales */
+        body {
+            font-family: 'Inter', 'Segoe UI', sans-serif !important;
+        }
+        
+        .navbar-brand {
+            font-weight: 700 !important;
+            font-size: 1.4em !important;
+        }
+    </style>
+{% endblock %}
+
+{% block branding %}
+    <a class="navbar-brand" href="/">
+        <i class="fas fa-book-reader me-2"></i>
+        Biblioteca API
+    </a>
+{% endblock %}
+
+{% block userlinks %}
+    {{ block.super }}
+    <li><a href="/"><i class="fas fa-home me-1"></i> Inicio</a></li>
+    <li><a href="/swagger/"><i class="fas fa-file-alt me-1"></i> Swagger</a></li>
+{% endblock %}
